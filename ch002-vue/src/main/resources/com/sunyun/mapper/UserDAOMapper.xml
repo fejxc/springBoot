@@ -15,4 +15,15 @@
     <delete id="delete" parameterType="String">
         delete from t_user where id = #{id}
     </delete>
+
+<!--    查询一个人-->
+    <select id="findOne" parameterType="String" resultType="User">
+        select id,name,age,salary,phoneCode from t_user where id = #{id}
+    </select>
+
+<!--    根据id更新用户信息-->
+    <update id="update" parameterType="User">
+        update t_user set name=#{name},age=#{age},salary=#{salary},phoneCode=#{phoneCode}
+        where id=#{id}
+    </update>
 </mapper>

@@ -60,7 +60,8 @@
                         <td v-text="user.age"></td>
                         <td v-text="user.salary"></td>
                         <td v-text="user.phoneCode"></td>
-                        <td><button class="btn btn-danger" @click="delUserInfo(user.id)">删除</button>&nbsp;&nbsp;<button class="btn btn-info">修改</button></td>
+                        <td><button class="btn btn-danger" @click="delUserInfo(user.id)">删除</button>&nbsp;
+                            &nbsp;<button class="btn btn-info" @click="findOneUserInfo(user.id)">修改</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -103,6 +104,15 @@
             user:{},//数据的双向绑定
         },
         methods:{
+            //查询一个人的信息
+            findOneUserInfo(id){
+                let _this = this;
+                //根据id查询一个人
+                axios.get("http://localhost:8989/users/user/findOne?id="+id).then(function (response) {
+                    console.log(response.data);
+                    _this.user=response.data;
+                });
+            },
             //保存用户信息的函数
             saveUserInfo(){
                 let _this = this;

@@ -33,4 +33,15 @@ public class UserServiceImpl implements UserService {
     public void delete(String id) {
         userDAO.delete(id);
     }
+
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public User findOne(String id) {
+        return userDAO.findOne(id);
+    }
+
+    @Override
+    public void update(User user) {
+        userDAO.update(user);
+    }
 }

@@ -1,6 +1,7 @@
 package com.sunyun.service;
 
 import com.sunyun.entity.User;
+import sun.nio.cs.US_ASCII;
 
 import java.util.List;
 
@@ -11,4 +12,8 @@ public interface UserService {
     void save(User user);
     //删除蝇虎
     void delete(String id);
+    //根据id查询用户
+    User findOne(String id);
+    //修改用户
+    void update(User user);
 }
