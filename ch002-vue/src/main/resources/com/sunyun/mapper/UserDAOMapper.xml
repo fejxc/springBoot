@@ -36,7 +36,7 @@
                 name like concat(#{name},'%')
             </if>
             <if test="code!=''">
-                or phoneCode like concat('%',#{code},'%')
+                and phoneCode like concat('%',#{code},'%')
             </if>
         </where>
     </select>
