@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <span v-text="msg"></span>
+        <h1 v-text="msg+'!'">1111</h1>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:"#app", //用来给vue实例定义一个范围
+            data:{
+                msg: "vue",
+
+            },  //给vue定义一些相关数据
+        });
+    </script>
+</body>
+</html>

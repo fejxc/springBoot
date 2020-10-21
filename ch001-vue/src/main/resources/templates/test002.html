@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <h3>{{msg}}</h3>
+
+        <h3>{{user.name}} {{user.msg}}</h3>
+
+        <h3>{{age}}</h3>
+
+        <h3>{{lists[0]}} {{lists[1]}}</h3>
+
+        <h3>{{users[0].age}}</h3>
+    </div>
+
+    <script src="../static/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:"#app", //用来给vue实例定义一个范围
+            data:{
+                msg: "欢迎学习vue！",
+                user:{name:"sunyun",msg:"handsomeBoy!"},
+                age:23,
+                lists:["jiangxi","shangrao","yushan"],
+                users:[{name:"sy",age:"20"},{naem:"hauhau",age:"21"}]
+            },  //给vue定义一些相关数据
+        });
+    </script>
+
+</body>
+</html>
