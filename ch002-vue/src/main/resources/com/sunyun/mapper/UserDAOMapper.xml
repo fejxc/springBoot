@@ -26,4 +26,18 @@
         update t_user set name=#{name},age=#{age},salary=#{salary},phoneCode=#{phoneCode}
         where id=#{id}
     </update>
+
+<!--    处理模糊搜索-->
+<!--    动态sql语句-->
+    <select id="findNameOrPhoneCode" resultType="User">
+        select id,name,age,salary,phoneCode from t_user
+        <where>
+            <if test="name!=''">
+                name like concat(#{name},'%')
+            </if>
+            <if test="code!=''">
+                or phoneCode like concat('%',#{code},'%')
+            </if>
+        </where>
+    </select>
 </mapper>

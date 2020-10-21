@@ -31,13 +31,14 @@
             <form class="form-inline">
                 <div class="form-group">
                     <label for="searchName">姓名：</label>
-                    <input type="text" class="form-control" id="searchName" placeholder="">
+                    <input type="text" class="form-control" id="searchName" v-model="searchName" placeholder="">
                 </div>
                 <div class="form-group">
                     <label for="searchEmail">电话：</label>
-                    <input type="text" class="form-control" id="searchEmail" placeholder="">
+                    <input type="text" class="form-control" id="searchEmail" v-model="searchCode" placeholder="">
                 </div>
-                <button type="submit" class="btn btn-info">搜索</button>
+<!--     @click.prevent阻止默认行为           -->
+                <button type="submit" class="btn btn-info" @click.prevent="searchLike">搜索</button>
             </form>
         </div>
     </div>
@@ -102,6 +103,8 @@
         data:{
             users:[],//数据赋值应该来源于后端服务接口，在页面加载完成之后就必须完成赋值操作users必须存在数据
             user:{},//数据的双向绑定
+            searchName:"", //处理搜索的数据绑定
+            searchCode:"", //处理搜索的数据绑定
         },
         methods:{
             //查询一个人的信息
@@ -159,6 +162,18 @@
                         console.log(err);
                     })
                 }
+            },
+            //处理模糊检索
+            searchLike(){
+                let _this = this;
+                console.log(this.searchName);
+                console.log(this.searchCode);
+                //code= 注意 一定要有 '='
+                axios.get("http://localhost:8989/users/user/findLike?name="+this.searchName+"&code="+this.searchCode).then(function (response) {
+                    console.log(response.data);
+                    _this.users=response.data;
+                });
+
             }
         },
         //生命2周期相关的函数

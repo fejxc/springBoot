@@ -16,4 +16,6 @@ public interface UserService {
     User findOne(String id);
     //修改用户
     void update(User user);
+    //模糊搜索
+    List<User> findNameOrPhoneCode(String name,String code);
 }

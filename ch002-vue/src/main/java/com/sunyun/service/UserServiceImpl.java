@@ -44,4 +44,10 @@ public class UserServiceImpl implements UserService {
     public void update(User user) {
         userDAO.update(user);
     }
+
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS) //查询，支持事务
+    public List<User> findNameOrPhoneCode(String name,String code) {
+        return userDAO.findNameOrPhoneCode(name,code);
+    }
 }

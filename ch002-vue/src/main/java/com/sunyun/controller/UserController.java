@@ -70,4 +70,11 @@ public class UserController {
     }
 
 
+    //模糊查询
+    @GetMapping("findLike")
+    public List<User> findNameOrCode(String name,String code){
+        return userService.findNameOrPhoneCode(name,code);
+    }
+
+
 }
