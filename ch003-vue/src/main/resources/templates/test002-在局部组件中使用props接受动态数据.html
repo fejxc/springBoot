@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>静态数据</title>
+</head>
+<body>
+<div id="app">
+    <login :name="username" :age="userage"></login>
+<!--使用v-bind将属性绑定到vue实例的date中-->
+
+</div>
+<template id="loginTemplate">
+    <h1>欢迎{{name}} 年龄{{age}}</h1>
+</template>
+<script src="../static/vue.js"></script>
+<script>
+    //声明一个组件配置对象
+    const login={
+        template:"#loginTemplate",
+        props:['name','age'] //用来接受使用组件标签传递的数据
+    }
+    const app = new Vue({
+        el:"#app", //用来给vue实例定义一个范围
+        data:{
+            username:'花花',
+            userage:'33',
+        },  //给vue定义一些相关数据
+        methods:{},
+        components:{ //用来注册局部组件
+            login:login  //注册局部组件
+        },
+
+    });
+</script>
+</body>
+</html>

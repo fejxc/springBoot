@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>路由的使用</title>
+</head>
+<body>
+<div id="app">
+    <a href="#/login">注册</a>
+    <a href="#/register">登陆</a>
+<!--    显示路由的组件-->
+  <router-view></router-view>
+</div>
+<template id="loginTemplate">
+    <h1>登陆</h1>
+</template>
+<template id="registerTemplate">
+    <h1>注册</h1>
+</template>
+<script src="../static/vue.js"></script>
+<script src="../static/vue-router.js"></script>
+<script>
+    //声明一个组件配置对象
+    const login={
+        template:"#loginTemplate",
+        props:['name','age'] //用来接受使用组件标签传递的数据
+    }
+    const register={
+        template: "#registerTemplate"
+    }
+    //路由
+    const router = new VueRouter({
+        routes:[{path:'/login',component:login},
+            {path: '/register',component: register},//可以直接把组件绑定给路由
+        ],
+    })
+    const app = new Vue({
+        el:"#app", //用来给vue实例定义一个范围
+        data:{
+        },  //给vue定义一些相关数据
+        methods:{},
+        router:router, //设置路由对象
+
+    });
+</script>
+</body>
+</html>

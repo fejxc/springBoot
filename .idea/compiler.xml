@@ -7,14 +7,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ch002-vue" />
+        <module name="ch003-vue" />
         <module name="ch001-vue" />
+        <module name="ch002-vue" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="001-vue" target="1.8" />
       <module name="ch001-vue" target="1.8" />
       <module name="ch002-vue" target="1.8" />
+      <module name="ch003-vue" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -22,6 +24,7 @@
       <module name="001-vue" options="-parameters" />
       <module name="ch001-vue" options="-parameters" />
       <module name="ch002-vue" options="-parameters" />
+      <module name="ch003-vue" options="-parameters" />
     </option>
   </component>
 </project>

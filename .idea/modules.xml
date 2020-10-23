@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ch001-vue/ch001-vue.iml" filepath="$PROJECT_DIR$/ch001-vue/ch001-vue.iml" />
       <module fileurl="file://$PROJECT_DIR$/ch002-vue/ch002-vue.iml" filepath="$PROJECT_DIR$/ch002-vue/ch002-vue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch003-vue/ch003-vue.iml" filepath="$PROJECT_DIR$/ch003-vue/ch003-vue.iml" />
     </modules>
   </component>
 </project>
