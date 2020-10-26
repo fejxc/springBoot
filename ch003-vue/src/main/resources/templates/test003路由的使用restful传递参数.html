@@ -9,17 +9,18 @@
 <!--    <a href="#/login">注册</a>-->
 <!--    <a href="#/register">登陆</a>-->
 <!--    router-link 好处：书写路径不需要写#号  to:用来书写路径 tag:渲染的指定标签样式  不添加的话默认是渲染成a标签-->
-    <router-link to="/login?id=21&name=sunyun" tag="button">我要登陆</router-link>
-    <router-link to="/register" tag="button">点我注册</router-link>
+    <router-link to="/login/" tag="button">我要登陆</router-link>
+<!--    使用restful风格传递参数  对应的path: '/register/:id/:name' -->
+    <router-link to="/register/21/孙昀" tag="button">点我注册</router-link>
 
 <!--    显示路由的组件-->
   <router-view></router-view>
 </div>
 <template id="loginTemplate">
-    <h1>登陆{{this.$route.query.id}} {{this.$route.query.name}}</h1>
+    <h1>登陆</h1>
 </template>
 <template id="registerTemplate">
-    <h1>注册</h1>
+    <h1>注册{{this.$route.params.id}} 、{{this.$route.params.name}}</h1>
 </template>
 <script src="../static/vue.js"></script>
 <script src="../static/vue-router.js"></script>
@@ -32,19 +33,20 @@
             return{}
         },
         methods: {},
-        created(){
-            console.log(this);
-            console.log("------->"+this.$route.query.id+"----->"+this.$route.query.name);
-        },
+
 
     }
     const register={
-        template: "#registerTemplate"
+        template: "#registerTemplate",
+        created(){
+            console.log(this);
+            console.log("----->"+this.$route.params.id+"----->"+this.$route.params.name);
+        },
     }
     //路由
     const router = new VueRouter({
         routes:[{path:'/login',component:login},
-            {path: '/register',component: register},//可以直接把组件绑定给路由
+            {path: '/register/:id/:name',component: register},//可以直接把组件绑定给路由
             //默认路由，第一次进界面，默认展示一个组件
             // {path:'/',component:login}, //根路由  不推荐使用
             {path:'/',redirect:'/login'} //redirect,当访问默认路由'/' ，跳转到指定地址
