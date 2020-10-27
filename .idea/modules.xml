@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/ch001-vue/ch001-vue.iml" filepath="$PROJECT_DIR$/ch001-vue/ch001-vue.iml" />
       <module fileurl="file://$PROJECT_DIR$/ch002-vue/ch002-vue.iml" filepath="$PROJECT_DIR$/ch002-vue/ch002-vue.iml" />
       <module fileurl="file://$PROJECT_DIR$/ch003-vue/ch003-vue.iml" filepath="$PROJECT_DIR$/ch003-vue/ch003-vue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch004-vue/ch004-vue.iml" filepath="$PROJECT_DIR$/ch004-vue/ch004-vue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch005-vue-cli/ch005-vue-cli.iml" filepath="$PROJECT_DIR$/ch005-vue-cli/ch005-vue-cli.iml" />
     </modules>
   </component>
 </project>

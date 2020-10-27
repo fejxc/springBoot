@@ -9,6 +9,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ch003-vue" />
         <module name="ch001-vue" />
+        <module name="ch005-vue-cli" />
+        <module name="ch004-vue" />
         <module name="ch002-vue" />
       </profile>
     </annotationProcessing>
@@ -17,6 +19,8 @@
       <module name="ch001-vue" target="1.8" />
       <module name="ch002-vue" target="1.8" />
       <module name="ch003-vue" target="1.8" />
+      <module name="ch004-vue" target="1.8" />
+      <module name="ch005-vue-cli" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -25,6 +29,8 @@
       <module name="ch001-vue" options="-parameters" />
       <module name="ch002-vue" options="-parameters" />
       <module name="ch003-vue" options="-parameters" />
+      <module name="ch004-vue" options="-parameters" />
+      <module name="ch005-vue-cli" options="-parameters" />
     </option>
   </component>
 </project>

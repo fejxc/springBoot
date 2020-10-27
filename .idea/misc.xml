@@ -9,6 +9,8 @@
         <option value="$PROJECT_DIR$/ch001-vue/pom.xml" />
         <option value="$PROJECT_DIR$/ch002-vue/pom.xml" />
         <option value="$PROJECT_DIR$/ch003-vue/pom.xml" />
+        <option value="$PROJECT_DIR$/ch004-vue/pom.xml" />
+        <option value="$PROJECT_DIR$/ch005-vue-cli/pom.xml" />
       </list>
     </option>
   </component>
