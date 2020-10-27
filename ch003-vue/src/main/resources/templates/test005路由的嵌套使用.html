@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>路由的嵌套使用</title>
+</head>
+<body>
+<div id="app">
+    <router-link to='/product'>商品管理</router-link>
+    <router-view></router-view>
+</div>
+
+<template id="productTemplate">
+    <div>
+    <h1>商品管理</h1>
+    <router-link to='/product/add'>商品添加</router-link>
+    <router-link to='/product/edit'>商品编辑</router-link>
+    <router-view></router-view>
+    </div>
+</template>
+<template id="productAddTemplate">
+    <h3>商品添加</h3>
+</template>
+<template id="productEditTemplate">
+    <h3>商品编辑</h3>
+</template>
+<script src="../static/vue.js"></script>
+<script src="../static/vue-router.js"></script>
+<script>
+    //声明一个组件模版
+    const product={
+        template:'#productTemplate',
+    }
+    //
+    const productAdd={
+        template: '#productAddTemplate',
+    }
+    const productEdit={
+        template: '#productEditTemplate',
+    }
+
+    //路由
+    const router = new VueRouter({
+        routes:[
+            {
+                path:'/product',
+                component:product,
+                children:[    //嵌套路由需要用children
+                    {path: 'add',component: productAdd},
+                    {path: 'edit',component: productEdit},
+                ]
+            },
+
+
+            //同一级别，是根路由，会覆盖
+            // {path: '/product/add',component: productAdd},
+            // {path:'/product/edit',component:productEdit},
+
+        ],
+    })
+    const app = new Vue({
+        el:"#app", //用来给vue实例定义一个范围
+        data:{
+        },  //给vue定义一些相关数据
+        methods:{},
+        router:router, //设置路由对象
+
+    });
+</script>
+</body>
+</html>
+
