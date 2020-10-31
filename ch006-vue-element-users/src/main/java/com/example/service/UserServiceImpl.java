@@ -35,4 +35,15 @@ public class UserServiceImpl implements UserService {
     public void update(User user) {
             userDAO.update(user);
     }
+
+    @Override
+    public List<User> findByPage(Integer pageNow, Integer rows) {
+        int start = (pageNow-1)*rows;
+        return userDAO.findByPage(start,rows);
+    }
+
+    @Override
+    public Long findTotals() {
+        return userDAO.findTotals();
+    }
 }

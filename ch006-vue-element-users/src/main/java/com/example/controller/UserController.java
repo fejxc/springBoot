@@ -6,7 +6,9 @@ import com.example.vo.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @CrossOrigin
@@ -64,5 +66,17 @@ public class UserController {
             result.setMsg("删除失败，请等会在删除");
         }
         return result;
+    }
+    //分页查询
+    @GetMapping("findByPage")
+    public Map<String,Object> findByPage(Integer pageNow, Integer pageSize){
+        Map<String,Object> results = new HashMap<>();
+        pageNow = pageNow == null?1:pageNow;  //避免空指针
+        pageSize = pageSize == null?4:pageSize;  //避免空指针
+       List<User> users=userService.findByPage(pageNow,pageSize);
+       Long totals = userService.findTotals();
+       results.put("users",users);
+       results.put("totals",totals);
+        return results;
     }
 }

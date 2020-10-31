@@ -1,6 +1,7 @@
 package com.example.service;
 
 import com.example.entity.User;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -15,4 +16,8 @@ public interface UserService {
         void delete(String id);
 
         void update(User user);
+        //分页查询
+        List<User> findByPage(Integer pageNow, Integer rows);
+        //查询总条数
+        Long findTotals();
 }

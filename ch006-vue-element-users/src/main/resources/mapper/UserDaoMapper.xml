@@ -23,4 +23,14 @@
         update t_users set name =#{name },bir=#{bir},sex=#{sex},address=#{address}
         where id=#{id}
     </update>
+
+<!--    分页查询-->
+    <select id="findByPage" resultType="User">
+         select * from t_users limit #{start},#{rows}
+    </select>
+
+<!--    查询总条数-->
+    <select id="findTotals" resultType="Long">
+        select count(id) from t_users
+    </select>
 </mapper>
