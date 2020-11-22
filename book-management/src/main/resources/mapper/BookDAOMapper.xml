@@ -17,4 +17,14 @@
     <update id="update" parameterType="Book">
         update book set id=#{id},name=#{name},author=#{author} where id=#{id}
     </update>
+
+    <!--    分页查询-->
+    <select id="findByPage" resultType="Book">
+         select * from book limit #{start},#{rows}
+    </select>
+
+    <!--    查询总条数-->
+    <select id="findTotals" resultType="Long">
+        select count(id) from book
+    </select>
 </mapper>

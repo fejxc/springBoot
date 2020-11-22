@@ -13,4 +13,9 @@ public interface BookService {
     void delete(String id);
     //更新图书
     void update(Book book);
+
+    //分页查询
+    List<Book> findByPage(Integer pageNow, Integer rows);
+    //查询总条数
+    Long findTotals();
 }

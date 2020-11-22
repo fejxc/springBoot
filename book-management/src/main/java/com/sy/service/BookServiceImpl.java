@@ -33,4 +33,15 @@ public class BookServiceImpl implements BookService {
     public void update(Book book) {
             bookDAO.update(book);
     }
+
+    @Override
+    public List<Book> findByPage(Integer pageNow, Integer rows) {
+        int start = (pageNow-1)*rows;
+        return bookDAO.findByPage(start,rows);
+    }
+
+    @Override
+    public Long findTotals() {
+        return bookDAO.findTotals();
+    }
 }

@@ -2,6 +2,7 @@ package com.sy.dao;
 
 import com.sy.entity.Book;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -15,4 +16,10 @@ public interface BookDAO {
     void delete(String id);
     //更新图书
     void update(Book book);
+
+    //分页查询
+    List<Book> findByPage(@Param("start")Integer start, @Param("rows")Integer rows);
+
+    //查询总条数
+    Long findTotals();
 }
