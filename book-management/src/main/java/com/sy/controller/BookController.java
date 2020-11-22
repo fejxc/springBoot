@@ -19,7 +19,7 @@ public class BookController {
 
     //添加图书
     @RequestMapping("add")
-    public void save(Book book){
+    public void save(@RequestBody Book book){
         service.add(book);
     }
 
@@ -34,4 +34,10 @@ public class BookController {
     public void delete(String id){
         service.delete(id);
     }
+    //修改图书
+    @RequestMapping("update")
+    public void update(@RequestBody Book book){
+        service.update(book);
+    }
+
 }

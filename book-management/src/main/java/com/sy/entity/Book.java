@@ -12,7 +12,7 @@ import lombok.experimental.Accessors;
 @Accessors
 @ToString
 public class Book {
-    private String id;
-    private String name;
-    private String author;
+    private String id; //图书id
+    private String name; //图书名字
+    private String author;  //图书作者
 }

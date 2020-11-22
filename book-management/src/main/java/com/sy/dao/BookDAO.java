@@ -13,4 +13,6 @@ public interface BookDAO {
     List<Book> findAll();
     //根据id删除
     void delete(String id);
+    //更新图书
+    void update(Book book);
 }

@@ -13,4 +13,8 @@
     <delete id="delete" parameterType="String">
         delete from book where id=#{id}
     </delete>
+<!--    更新图书-->
+    <update id="update" parameterType="Book">
+        update book set id=#{id},name=#{name},author=#{author} where id=#{id}
+    </update>
 </mapper>
