@@ -45,7 +45,7 @@ public class BookController {
     public Map<String,Object> findByPage(Integer pageNow, Integer pageSize){
         Map<String,Object> results = new HashMap<>();
         pageNow = pageNow == null?1:pageNow;  //避免空指针
-        pageSize = pageSize == null?4:pageSize;  //避免空指针
+        pageSize = pageSize == null?6:pageSize;  //避免空指针
         List<Book> books=service.findByPage(pageNow,pageSize);
         Long totals = service.findTotals();
         results.put("books",books);
