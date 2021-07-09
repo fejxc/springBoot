@@ -2,6 +2,8 @@ package com.sy.controller;
 
 import com.sy.entity.Book;
 import com.sy.service.BookService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -17,16 +19,20 @@ import java.util.Map;
 public class BookController {
     @Autowired
     private BookService service;
+    private static final Logger logger = LoggerFactory.getLogger(BookController.class);
 
     //添加图书
     @RequestMapping("add")
     public void save(@RequestBody Book book){
         service.add(book);
+        logger.info("添加成功");
+
     }
 
     //查询所有
     @RequestMapping("findAll")
     public List<Book> findAll(){
+        logger.info("查询成功");
         return service.findAll();
     }
 
@@ -34,11 +40,13 @@ public class BookController {
     @RequestMapping("delete")
     public void delete(String id){
         service.delete(id);
+        logger.info("删除成功");
     }
     //修改图书
     @RequestMapping("update")
     public void update(@RequestBody Book book){
         service.update(book);
+        logger.info("修改成功");
     }
     //分页查询
     @GetMapping("findByPage")
